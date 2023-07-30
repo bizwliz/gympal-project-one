@@ -1,15 +1,11 @@
-var healthchoice="dairy-free"
-var apiKey="7b96ce73245fd63d266ec31879968a08"
-var recipes=`https://api.edamam.com/api/recipes/v2?type=public&health=${healthchoice}&app_id=cfd01724&app_key=7b96ce73245fd63d266ec31879968a08%20%09`
+var healthchoice = "dairy-free"
+var apiKey = "7b96ce73245fd63d266ec31879968a08"
+var recipes = `https://api.edamam.com/api/recipes/v2?type=public&health=${healthchoice}&app_id=cfd01724&app_key=7b96ce73245fd63d266ec31879968a08%20%09`
 
-fetch(recipes, { headers: {
-    'X-Api-Key': apiKey,}})
-
-    .then(function (response){
-    return response.json();
-})
-    .then(function (data){
-        console.log(data);
+fetch(recipes, {
+    headers: {
+        'X-Api-Key': apiKey,
+    }
 })
 
     .then(function (response) {
@@ -18,6 +14,7 @@ fetch(recipes, { headers: {
     .then(function (data) {
         console.log(data);
     })
+
 
 // TESTING API NINJAS EXERCISE API
 var APIKey = "el9fiYScbudO77M6OCsIXA==qu4fJ4psSnQw7h6M";
@@ -40,3 +37,13 @@ fetch(urlMuscles + "biceps", {
 
     })
 
+//Account creation page functions
+var signUpBtn = document.getElementById("sign-up-btn");
+
+function storeUserInfo() {
+    var signUpName = document.getElementById("sign-up-name").value;
+
+    localStorage.setItem("username", signUpName);
+}
+signUpBtn.addEventListener('click', storeUserInfo());
+console.log(signUpName);
