@@ -1,13 +1,16 @@
+
+
+
 h1 {
     display: flex;
     flex-wrap: wrap;
-    background: green;
+   font-size: x-large;
     justify-content: center;
+    box-sizing: border-box;
 
 }
 
-
- h2 {
+h2 {
     padding: 10px;
     margin-left: 10px;
 }
@@ -21,20 +24,21 @@ h3{
 h4{
     padding: 10px;
     margin-left: 10px;
+    
 }
 body{
-    background-color: white;
+  background-color: aqua;
+  
 }
 
-h4{
-
-}
-
-button{
+ button{
     background-color: aquamarine;
     margin-left: 10px;
 }
 
-{
-    background-color: gray;
+.text{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 100px;
 }
