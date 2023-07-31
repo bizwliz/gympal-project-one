@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1{
     display: flex;
     flex-wrap: wrap;
@@ -36,3 +37,45 @@ body{
     display: flex;
     flex-wrap: wrap;
  }
+=======
+h1 {
+    display: flex;
+    flex-wrap: wrap;
+    background: green;
+    justify-content: center;
+
+}
+
+
+ h2 {
+    padding: 10px;
+    margin-left: 10px;
+}
+
+h3{
+    padding: 10px;
+    margin-left: 10px;
+
+}
+
+h4{
+    padding: 10px;
+    margin-left: 10px;
+}
+body{
+    background-color: white;
+}
+
+h4{
+
+}
+
+button{
+    background-color: aquamarine;
+    margin-left: 10px;
+}
+
+{
+    background-color: gray;
+}
+>>>>>>> d16b9bcb99affda33194693f63a56ed196ea4d17
