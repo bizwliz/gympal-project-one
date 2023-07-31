@@ -38,12 +38,21 @@ fetch(urlMuscles + "biceps", {
     })
 
 //Account creation page functions
+// Account creation page functions
 var signUpBtn = document.getElementById("sign-up-btn");
 
 function storeUserInfo() {
-    var signUpName = document.getElementById("sign-up-name").value;
+  var signUpName = document.getElementById("sign-up-name").value;
+  var signUpEmail = document.getElementById("sign-up-email").value;
+  var signUpDob = document.getElementById("sign-up-dob").value;
 
-    localStorage.setItem("username", signUpName);
+  localStorage.setItem("Email", signUpEmail);
+  localStorage.setItem("Dob", signUpDob);
+  localStorage.setItem("Name", signUpName);
+
+  console.log("Name: " + signUpName); // Log the entered username to the console
+  console.log("Email: " + signUpEmail);
+  console.log("Date of Birth: " + signUpDob);
 }
-signUpBtn.addEventListener('click', storeUserInfo());
-console.log(signUpName);
+
+signUpBtn.addEventListener('click', storeUserInfo);
