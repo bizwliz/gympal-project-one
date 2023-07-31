@@ -6,57 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Your Info</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+<!-- NAVIGATION BAR -->
+<!-- WHEN YOU CLICK THE GYM LIFE LOGO WHERE DOES IT TAKE YOU? -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="">
+
+            <!-- gymlife logo
+        <img src="" width="112" height="28"> -->
+        <h1>GYM LIFE</h1>
+
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            
+        </a>
+    </div>
+</div>
+</div>
+
+<div class="navbar-end">
+    <div class="navbar-item">
+        <a class="navbar-item">
+            Home
+        </a>
+        
+        <a class="navbar-item">
+            My Routines
+        </a>
+        <div class="buttons">
+            
+            <!-- sign in/account icon -->
+            <a class="button is-light">
+                <img src="../images/account.png" alt="Account info">
+            </a>
+        </div>
+        </div>
+    </div>
+    </div>
+</nav>
+<header>
+
+</header>
 
 <body>
-    <!-- NAVIGATION BAR -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-
-                <!-- gymlife logo
-            <img src="" width="112" height="28"> -->
-
-            </a>
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item">
-                    Home
-                </a>
-
-                <a class="navbar-item">
-                    My Routines
-                </a>
-
-                </a>
-            </div>
-        </div>
-        </div>
-
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-
-                    <!-- sign in/account icon -->
-                    <a class="button is-light">
-
-                        Log in
-                    </a>
-                </div>
-            </div>
-        </div>
-        </div>
-    </nav>
 
     <h1 class="your-info">Your Info</h1>
 
@@ -64,7 +66,7 @@
 <!-- FORMS -->
     <div class="field">
         <div class="control">
-            <input class="input" type="text" placeholder="Name">
+            <input id="sign-up-name" class="input" type="text" placeholder="Name">
         </div>
     </div>
 
@@ -85,11 +87,11 @@
 
 
 <!-- BUTTON -->
-    <button class="button is-rounded">Next</button>
+    <button id="sign-up-btn" class="button is-rounded">Next</button>
     </section>
 
-    
+    <script src="../js/script.js"></script>
 </body>
-<script src="./assets/js/script.js"></script>
+
 
 </html>
