@@ -31,4 +31,51 @@ fetch(urlMuscles + "biceps", {
     .then(function (data){
     console.log(data);
 
+<<<<<<< HEAD
 })
+=======
+    })
+
+ // function to show modal
+function showModal() {
+     errorModal.style.display = "block";
+}
+
+// Function to hide modal
+function hideModal() {
+    errorModal.style.display = "none";
+}
+
+
+//Account creation page functions
+// Account creation page functions
+var signUpBtn = document.getElementById("sign-up-btn");
+var errorModal = document.getElementById("error-modal");
+
+function storeUserInfo() {
+  var signUpName = document.getElementById("sign-up-name").value;
+  var signUpEmail = document.getElementById("sign-up-email").value;
+  var signUpDob = document.getElementById("sign-up-dob").value;
+
+// Check if all input fields have valid information
+  if (signUpName && signUpEmail && signUpDob) {
+    localStorage.setItem("Email", signUpEmail);
+    localStorage.setItem("Dob", signUpDob);
+    localStorage.setItem("Name", signUpName);
+
+    console.log("Name: " + signUpName); 
+    console.log("Email: " + signUpEmail);
+    console.log("Date of Birth: " + signUpDob);
+
+    // Navigate to the next page (page 3) when all fields are filled
+    window.location.href = "./page3.html"; 
+} else {
+    showModal(); // Show the modal if fields are not filled
+  }
+}
+
+signUpBtn.addEventListener('click', storeUserInfo);
+var modalCloseBtn = document.querySelector(".modal-close");
+modalCloseBtn.addEventListener("click", hideModal);
+
+>>>>>>> 4b71e728bcec73475b2d0117bca034336ca0d972
