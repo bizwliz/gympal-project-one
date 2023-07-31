@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Your Info</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<!-- added styling sheet i created for modal -->
+    <link rel="stylesheet" href="../css/style2.css">
+    
+
+
 </head>
 <!-- NAVIGATION BAR -->
 <!-- WHEN YOU CLICK THE GYM LIFE LOGO WHERE DOES IT TAKE YOU? -->
@@ -59,9 +64,8 @@
 </header>
 
 <body>
-
+    
     <h1 class="your-info">Your Info</h1>
-
 
 <!-- FORMS -->
     <div class="field">
@@ -73,7 +77,7 @@
 
     <div class="field">
         <div class="control">
-            <input class="input" type="date" placeholder="Date of Birth">
+            <input id="sign-up-dob" class="input" type="date" placeholder="Date of Birth">
         </div>
     </div>
 
@@ -81,7 +85,7 @@
 
     <div class="field">
         <div class="control">
-            <input class="input" type="email" placeholder="Email">
+            <input id="sign-up-email" class="input" type="email" placeholder="Email">
         </div>
     </div>
 
@@ -238,11 +242,21 @@
 
 
 <!-- BUTTON -->
-    <button id="sign-up-btn" class="button is-rounded">Next</button>
-    </section>
+<button id="sign-up-btn" class="button is-rounded">Next</button>
 
-    <script src="../js/script.js"></script>
+<!-- Add the modal HTML -->
+<div class="modal" id="error-modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-text">
+            <p>Please fill in all the fields.</p>
+        </div>
+        <div class="modal-close-container"> 
+            <button class="modal-close is-large" aria-label="close">Close</button>
+        </div>
+    </div>
+</div>
+
+  
+<script src="../js/script.js"></script>
 </body>
-
-
 </html>
