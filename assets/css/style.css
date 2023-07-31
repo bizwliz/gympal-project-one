@@ -1,0 +1,38 @@
+h1{
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    justify-content: center;
+    font-size: x-large;
+}
+
+h2{
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    margin: 80px;
+    justify-content: center;
+    font-weight: 400git ;
+}
+
+h4{
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    margin: 80px;
+    justify-content: center; 
+    font-weight: 800px;
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url("assets/images/project1/training-g812939767_1280.jpg");
+    margin: 80px;
+    background-size: cover;
+  
+}
+ .your-info{
+    display: flex;
+    flex-wrap: wrap;
+ }
