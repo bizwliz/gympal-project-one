@@ -37,44 +37,45 @@ fetch(urlMuscles + "biceps", {
 
     })
 
+ // function to show modal
+function showModal() {
+     errorModal.style.display = "block";
+}
+    
+// Function to hide modal
+function hideModal() {
+    errorModal.style.display = "none";
+}
+
+
 //Account creation page functions
+// Account creation page functions
 var signUpBtn = document.getElementById("sign-up-btn");
-var loginBtn = document.getElementById('loginBtn');
+var errorModal = document.getElementById("error-modal");
 
 function storeUserInfo() {
-    var signUpName = document.getElementById("sign-up-name").value;
-    var dobInput = document.getElementById('dob').value;
-    // capture the DOB and email from html
+  var signUpName = document.getElementById("sign-up-name").value;
+  var signUpEmail = document.getElementById("sign-up-email").value;
+  var signUpDob = document.getElementById("sign-up-dob").value;
 
-    // Here, we are grabbing the previous data from localStorage, if there is no data in localStorage, then this var will be an empty object
-    var userData = JSON.parse(localStorage.getItem(loggedInUser)) || {};
+// Check if all input fields have valid information
+  if (signUpName && signUpEmail && signUpDob) {
+    localStorage.setItem("Email", signUpEmail);
+    localStorage.setItem("Dob", signUpDob);
+    localStorage.setItem("Name", signUpName);
 
-    // Setting the keys in the object using dot notation
-    userData.name = signUpName || '';
-    userData.dob = dobInput || '';
+    console.log("Name: " + signUpName); 
+    console.log("Email: " + signUpEmail);
+    console.log("Date of Birth: " + signUpDob);
 
-    // var arrayofObjects = [{}, {}]
-
-    localStorage.setItem(loggedInUser, JSON.stringify(userData));
-};
-
-function login() {
-    // We should have an initial form where the user types in their name and our app will look in local storage for a key with that name
-    var loginName = document.getElementById('login-name').value;
-    loggedInUser = loginName;
-
-    var foundUser = JSON.parse(localStorage.getItem(loggedInUser)) || false;
-
-    if(foundUser) {
-        var nameInput = document.getElementById('sign-up-name');
-        var dobInput = document.getElementById('dob');
-        nameInput.value = foundUser.name;
-        dobInput.value = foundUser.dob;
-    } else {
-        alert('User not found!');
-    }
-};
-
-loginBtn.addEventListener('click', login);
+    // Navigate to the next page (page 3) when all fields are filled
+    window.location.href = "./page3.html"; 
+} else {
+    showModal(); // Show the modal if fields are not filled
+  }
+}
 
 signUpBtn.addEventListener('click', storeUserInfo);
+var modalCloseBtn = document.querySelector(".modal-close");
+modalCloseBtn.addEventListener("click", hideModal);
+
