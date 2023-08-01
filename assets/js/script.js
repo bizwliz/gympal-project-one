@@ -37,9 +37,9 @@ fetch(urlMuscles + "biceps", {
 
     })
 
- // function to show modal
+// function to show modal
 function showModal() {
-     errorModal.style.display = "block";
+    errorModal.style.display = "block";
 }
 
 // Function to hide modal
@@ -53,26 +53,32 @@ function hideModal() {
 var signUpBtn = document.getElementById("sign-up-btn");
 var errorModal = document.getElementById("error-modal");
 
+//TO-DO: store each user input as its own object in local storage key: UserEntryDatabase
 function storeUserInfo() {
-  var signUpName = document.getElementById("sign-up-name").value;
-  var signUpEmail = document.getElementById("sign-up-email").value;
-  var signUpDob = document.getElementById("sign-up-dob").value;
+    var signUpName = document.getElementById("sign-up-name").value;
+    var signUpEmail = document.getElementById("sign-up-email").value;
+    var signUpDob = document.getElementById("sign-up-dob").value;
+    var userObject = {
+        name: signUpName,
+        dob: signUpDob,
+        email: signUpEmail
+    }
 
-// Check if all input fields have valid information
-  if (signUpName && signUpEmail && signUpDob) {
-    localStorage.setItem("Email", signUpEmail);
-    localStorage.setItem("Dob", signUpDob);
-    localStorage.setItem("Name", signUpName);
+    // Check if all input fields have valid information
+    if (signUpName && signUpEmail && signUpDob) {
+        localStorage.setItem("userObj", JSON.stringify(userObject));
+        // localStorage.setItem("Dob", signUpDob);
+        // localStorage.setItem("Name", signUpName);
 
-    console.log("Name: " + signUpName); 
-    console.log("Email: " + signUpEmail);
-    console.log("Date of Birth: " + signUpDob);
+        console.log("Name: " + signUpName);
+        console.log("Email: " + signUpEmail);
+        console.log("Date of Birth: " + signUpDob);
 
-    // Navigate to the next page (page 3) when all fields are filled
-    window.location.href = "./page3.html"; 
-} else {
-    showModal(); // Show the modal if fields are not filled
-  }
+        // Navigate to the next page (page 3) when all fields are filled
+        window.location.href = "./page5.html";
+    } else {
+        showModal(); // Show the modal if fields are not filled
+    }
 }
 
 signUpBtn.addEventListener('click', storeUserInfo);
