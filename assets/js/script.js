@@ -41,7 +41,7 @@ fetch(urlMuscles + "biceps", {
 function showModal() {
      errorModal.style.display = "block";
 }
-    
+
 // Function to hide modal
 function hideModal() {
     errorModal.style.display = "none";
