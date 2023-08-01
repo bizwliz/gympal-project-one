@@ -46,9 +46,6 @@ body{
 =======
 >>>>>>> develop
 h1 {
-=======
-h1{
->>>>>>> 4b71e728bcec73475b2d0117bca034336ca0d972
     display: flex;
     flex-wrap: wrap;
    font-size: x-large;
@@ -71,6 +68,7 @@ h2{
 h3{
     padding: 10px;
     margin-left: 10px;
+
 }
 
 h4{
@@ -78,10 +76,13 @@ h4{
     margin-left: 10px;
     
 }
-
 body{
   background-color: aqua;
   
+}
+
+h4{
+
 }
 
 <<<<<<< HEAD
@@ -103,7 +104,6 @@ button{
 =======
 }
     background-color: gray;
-<<<<<<< HEAD
 }
 >>>>>>> d16b9bcb99affda33194693f63a56ed196ea4d17
 =======

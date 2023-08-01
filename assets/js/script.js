@@ -31,8 +31,4 @@ fetch(urlMuscles + "biceps", {
     .then(function (data){
     console.log(data);
 
-
 })
-
-
-
