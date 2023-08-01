@@ -31,9 +31,6 @@ fetch(urlMuscles + "biceps", {
     .then(function (data){
     console.log(data);
 
-<<<<<<< HEAD
-})
-=======
     })
 
  // function to show modal
@@ -78,4 +75,3 @@ signUpBtn.addEventListener('click', storeUserInfo);
 var modalCloseBtn = document.querySelector(".modal-close");
 modalCloseBtn.addEventListener("click", hideModal);
 
->>>>>>> 4b71e728bcec73475b2d0117bca034336ca0d972
