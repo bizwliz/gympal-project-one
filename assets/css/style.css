@@ -1,16 +1,69 @@
+<<<<<<< HEAD
 
 
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+h1{
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    justify-content: center;
+    font-size: x-large;
+}
+
+h2{
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    margin: 80px;
+    justify-content: center;
+    font-weight: 400git ;
+}
+
+h4{
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    margin: 80px;
+    justify-content: center; 
+    font-weight: 800px;
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url("assets/images/project1/training-g812939767_1280.jpg");
+    margin: 80px;
+    background-size: cover;
+  
+}
+ .your-info{
+    display: flex;
+    flex-wrap: wrap;
+ }
+=======
+>>>>>>> develop
 h1 {
+=======
+h1{
+>>>>>>> 4b71e728bcec73475b2d0117bca034336ca0d972
     display: flex;
     flex-wrap: wrap;
    font-size: x-large;
     justify-content: center;
+<<<<<<< HEAD
     box-sizing: border-box;
 
 }
 
 h2 {
+=======
+}
+
+h2{
+>>>>>>> develop
     padding: 10px;
     margin-left: 10px;
 }
@@ -18,7 +71,6 @@ h2 {
 h3{
     padding: 10px;
     margin-left: 10px;
-
 }
 
 h4{
@@ -26,19 +78,35 @@ h4{
     margin-left: 10px;
     
 }
+
 body{
   background-color: aqua;
   
 }
 
+<<<<<<< HEAD
  button{
+=======
+button{
+>>>>>>> develop
     background-color: aquamarine;
     margin-left: 10px;
 }
 
+<<<<<<< HEAD
 .text{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     font-size: 100px;
 }
+=======
+}
+    background-color: gray;
+<<<<<<< HEAD
+}
+>>>>>>> d16b9bcb99affda33194693f63a56ed196ea4d17
+=======
+} 
+>>>>>>> 4b71e728bcec73475b2d0117bca034336ca0d972
+>>>>>>> develop
