@@ -154,51 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
     displayExerciseInfo();
 });
 
-
-// function displayExerciseInfo() {
-//     // Retrieve workout data from local storage
-//     var workoutData = JSON.parse(localStorage.getItem("exercise"));
-
-//     if (!workoutData || workoutData.length === 0) {
-//         console.error("Workout data not available or empty.");
-//         return;
-//     }
-
-//     // Get the container element where you want to display the exercise information
-//     var exerciseContainer = document.getElementById("exercise-info-container");
-
-//     // Create a heading to indicate the user selection
-//     var heading = document.createElement("h2");
-//     heading.textContent = "Your Selected Exercise Information";
-//     exerciseContainer.appendChild(heading);
-
-//     // Loop through the exercise data and create DOM elements to display the information
-//     workoutData.forEach(function (exercise) {
-//         var exerciseDiv = document.createElement("div");
-//         exerciseDiv.classList.add("exercise");
-
-//         // Populate the exercise information
-//         exerciseDiv.innerHTML = `
-//             <h3>${exercise.name}</h3>
-//             <p>Difficulty: ${exercise.difficulty}</p>
-//             <p>Equipment: ${exercise.equipment}</p>
-//             <p>Muscle: ${exercise.muscle}</p>
-//             <p>Type: ${exercise.type}</p>
-//             <p>Instructions: ${exercise.instructions}</p>
-//         `;
-
-//         exerciseContainer.appendChild(exerciseDiv);
-//     });
-// }
-
-// Event listener to wait for the DOM to be ready
-document.addEventListener("DOMContentLoaded", function () {
-    // Call the function to display exercise information
-    displayExerciseInfo();
-});
-
-
-
 // function to show modal
 function showModal() {
     errorModal.style.display = "block";
