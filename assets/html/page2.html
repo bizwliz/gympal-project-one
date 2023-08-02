@@ -2,143 +2,163 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Your Info</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<!-- added styling sheet i created for modal -->
-    <link rel="stylesheet" href="../css/style2.css">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Info</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- added styling sheet i created for modal -->
+  <link rel="stylesheet" href="../css/style2.css">
+
 
 
 </head>
 <!-- NAVIGATION BAR -->
 <!-- WHEN YOU CLICK THE GYM LIFE LOGO WHERE DOES IT TAKE YOU? -->
 <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="">
 
-            <!-- gymlife logo
+      <!-- gymlife logo
         <img src="" width="112" height="28"> -->
-        <h1>GYM PAL</h1>
+      <h1>GYM PAL</h1>
 
-        </a>
+    </a>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+
+      </a>
     </div>
+  </div>
+  </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-            
-        </a>
-    </div>
-</div>
-</div>
-
-<div class="navbar-end">
+  <div class="navbar-end">
     <div class="navbar-item">
-        <a class="navbar-item">
-            Home
+      <a class="navbar-item">
+        Home
+      </a>
+
+      <a class="navbar-item">
+        My Routines
+      </a>
+      <div class="buttons">
+
+        <!-- sign in/account icon -->
+        <a class="button is-light">
+          <img src="../images/account.png" alt="Account info">
         </a>
-        
-        <a class="navbar-item">
-            My Routines
-        </a>
-        <div class="buttons">
-            
-            <!-- sign in/account icon -->
-            <a class="button is-light">
-                <img src="../images/account.png" alt="Account info">
-            </a>
-        </div>
-        </div>
+      </div>
     </div>
-    </div>
+  </div>
+  </div>
 </nav>
 <header>
 
 </header>
 
 <body>
-    
-    <h1 class="your-info">Your Info</h1>
 
-<!-- FORMS -->
-    <div class="field">
-        <div class="control">
-            <input id="sign-up-name" class="input" type="text" placeholder="Name">
-        </div>
+  <h1 class="your-info">Your Info</h1>
+
+  <!-- FORMS -->
+  <div class="field">
+    <div class="control">
+      <input id="sign-up-name" class="input" type="text" placeholder="Name">
     </div>
+  </div>
 
 
-    <div class="field">
-        <div class="control">
-            <input id="sign-up-dob" class="input" type="date" placeholder="Date of Birth">
-        </div>
+  <div class="field">
+    <div class="control">
+      <input id="sign-up-dob" class="input" type="date" placeholder="Date of Birth">
     </div>
+  </div>
 
 
 
-    <div class="field">
-        <div class="control">
-            <input id="sign-up-email" class="input" type="email" placeholder="Email">
-        </div>
+  <div class="field">
+    <div class="control">
+      <input id="sign-up-email" class="input" type="email" placeholder="Email">
     </div>
+  </div>
 
-<!-- DIETARY NEEDS LIST -->
-    <h1>Your Dietary Needs</h1>
-    <!-- 
+  <!-- DIETARY NEEDS LIST -->
+  <h1>Your Dietary Needs</h1>
+  <!-- 
     CHECKBOX LIST -->
-    <section id="dietary-needs-list">
-        
-        <!-- TRY TO DO THIS IN JAVASCRIPT AFTER -->
-        <label class="checkbox">
-            <input type="checkbox">
-            Dairy-Free
-        </label>
-    
-        <label class="checkbox">
-            <input type="checkbox">
-            Pescatarian
-        </label>
-    
-        <label class="checkbox">
-            <input type="checkbox">
-            Vegan
-        </label>
-    
-        <label class="checkbox">
-            <input type="checkbox">
-            Vegetarian
-        </label>
-    
-        <label class="checkbox">
-            <input type="checkbox">
-            Low-Carb, High Protien
-        </label>
-    
-        <label class="checkbox">
-            <input type="checkbox">
-            Gluten Free
-        </label>
-    
-        <label class="checkbox">
-            <input type="checkbox">
-            Peanut-Free
-        </label>
-    
-        <label class="checkbox">
-            <input type="checkbox">
-            Etc.
-        </label>
-    </section>
-    
- <h1>Muscle Groups </h1>
-    <!-- MUSCLE GROUP 1 -->
+  <section id="dietary-needs-list">
+
+    <!-- TRY TO DO THIS IN JAVASCRIPT AFTER -->
+    <label class="checkbox">
+      <input id="diet1" type="checkbox" value="shellfish-free">
+      Shellfish-free
+    </label>
+
+    <label class="checkbox">
+      <input id="diet2" type="checkbox" value="dairy-free">
+      Dairy-free
+    </label>
+
+    <label class="checkbox">
+      <input id="diet3" type="checkbox" value="gluten-free">
+      Gluten-free
+    </label>
+
+    <label class="checkbox">
+      <input id="diet4" type="checkbox" value="peanut-free">
+      Peanut-free
+    </label>
+
+    <label class="checkbox">
+      <input id="diet5" type="checkbox" value="soy-free">
+      Soy-free
+    </label>
+
+    <label class="checkbox">
+      <input id="diet6" type="checkbox" value="keto">
+      Keto
+    </label>
+
+    <label class="checkbox">
+      <input id="diet7" type="checkbox" value="kosher">
+      Kosher
+    </label>
+
+    <label class="checkbox">
+      <input id="diet8" type="checkbox" value="mediterranean">
+      Mediterranean
+    </label>
+
+    <label class="checkbox">
+      <input id="diet9" type="checkbox" value="paleo">
+      Paleo
+    </label>
+
+    <label class="checkbox">
+      <input id="diet10" type="checkbox" value="pescatarian">
+      Pescatarian
+    </label>
+
+    <label class="checkbox">
+      <input id="diet11" type="checkbox" value="vegan">
+      Vegan
+    </label>
+
+    <label class="checkbox">
+      <input id="diet12" type="checkbox" value="vegetarian">
+      Vegetarian
+    </label>
+  </section>
+
+  <h1>Muscle Groups </h1>
+  <!-- MUSCLE GROUP 1 -->
   <div class="dropdown is-hoverable">
     <div class="dropdown-trigger">
       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
@@ -241,22 +261,23 @@
 
 
 
-<!-- BUTTON -->
-<button id="sign-up-btn" class="button is-rounded">Next</button>
+  <!-- BUTTON -->
+  <button id="sign-up-btn" class="button is-rounded">Next</button>
 
-<!-- Add the modal HTML -->
-<div class="modal" id="error-modal" style="display: none;">
+  <!-- Add the modal HTML -->
+  <div class="modal" id="error-modal" style="display: none;">
     <div class="modal-content">
-        <div class="modal-text">
-            <p>Please fill in all the fields.</p>
-        </div>
-        <div class="modal-close-container"> 
-            <button class="modal-close is-large" aria-label="close">Close</button>
-        </div>
+      <div class="modal-text">
+        <p>Please fill in all the fields.</p>
+      </div>
+      <div class="modal-close-container">
+        <button class="modal-close is-large" aria-label="close">Close</button>
+      </div>
     </div>
-</div>
+  </div>
 
-  
-<script src="../js/script.js"></script>
+
+  <script src="../js/script.js"></script>
 </body>
+
 </html>
