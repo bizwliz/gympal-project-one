@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Your Goals</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style3.css">
 </head>
 <header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -58,6 +58,14 @@
 
 <div>
     <ul id="your-workout">Your Workout
+            <!-- Add a container for the slideshow -->
+    <div class="slideshow-container">
+        <!-- Exercise information will be displayed here -->
+    </div>
+
+    <!-- Next and Previous arrows -->
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
         <li class="exercise"></li>
     </ul>
 </div>
