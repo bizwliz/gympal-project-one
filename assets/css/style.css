@@ -1,7 +1,16 @@
+:root{
+    --text-color:#FAF2E9;
+    --background-color: #32402F;
+
+}
+
+.title{
+    color: var(--text-color);
+}
 h1{
     display: flex;
     flex-wrap: wrap;
-    background: green;
+    background:var(--background-color);
     justify-content: center;
 }
 
@@ -29,6 +38,41 @@ button{
     margin-left: 10px;
 }
 
+.columns {
+    height: 700px;
+ width: 100%;
+}
+
+.is-two-thirds{
+    width: 100%;
+}
+.introduction{
+    color: white;
+}
+
+/* .description {
+    color:var(--text-color);
+    background-color: var(--background-color);
+    height: 700px;
+    text-align: center;
+    padding: 200px 0;
+} */
+.description {
+    color: var(--text-color);
+    background-color: var(--background-color);
+    height: 102%;
+    text-align: center;
+    padding: 200px 0;
+    position: relative;
+    right: 1.9%;
+}
+
+.description a{
+    width:20px;
+}
+#get-started {
+
+}
 /* }
     background-color: gray;
 }  */

@@ -206,7 +206,6 @@ document.addEventListener("DOMContentLoaded", function () {
     displayExerciseInfo();
 });
 
-
 // function to show modal
 function showModal() {
     errorModal.style.display = "block";
