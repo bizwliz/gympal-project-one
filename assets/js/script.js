@@ -26,33 +26,73 @@ fetch(recipes, {
 var APIKey = "el9fiYScbudO77M6OCsIXA==qu4fJ4psSnQw7h6M";
 var urlMuscles = "https://api.api-ninjas.com/v1/exercises?muscle="
 
+var selectedMuscleGroup = "Muscle Group";
+var selectedDifficultyLevel = "Difficulty Level";
 
-fetch(urlMuscles + "biceps", {
-    headers: {
-        'X-Api-Key': APIKey,
-        // 'contentType': 'application/json',
-        // 'cache': 'reload'
-    }
-})
+// fetching api data function based on user selection
+function fetchMuscleGroupInformation() {
+    var muscleGroup = selectedMuscleGroup.toLowerCase();
+    var difficultyLevel = selectedDifficultyLevel.toLowerCase();
+
+    var APIKey = "el9fiYScbudO77M6OCsIXA==qu4fJ4psSnQw7h6M";
+    var urlMuscles = "https://api.api-ninjas.com/v1/exercises?muscle=" + muscleGroup + "&difficulty=" + difficultyLevel;
+
+    fetch(urlMuscles, {
+        headers: {
+            'X-Api-Key': APIKey,
+        }
+    })
     .then(function (response) {
         return response.json();
     })
-
     .then(function (data) {
         console.log(data);
-
+        // save the API data into local storage
+        localStorage.setItem("exercise", JSON.stringify(data));
     })
+}
+
+// function to update the selected muscle group
+function updateSelectedMuscleGroup(muscleGroup) {
+    selectedMuscleGroup = muscleGroup;
+    document.getElementById("selected-muscle-group").textContent = selectedMuscleGroup;
+    fetchMuscleGroupInformation();
+}
+
+// function to update the selected difficulty level
+function updateSelectedDifficultyLevel(difficultyLevel) {
+    selectedDifficultyLevel = difficultyLevel;
+    document.getElementById("selected-difficulty").textContent = selectedDifficultyLevel;
+    fetchMuscleGroupInformation();
+}
+
+// add event listeners to each dropdown menu item
+var muscleGroupItems = document.querySelectorAll("#dropdown-menu-muscle .dropdown-item");
+var difficultyItems = document.querySelectorAll("#dropdown-menu-difficulty .dropdown-item");
+
+muscleGroupItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+        var selectedMuscle = item.getAttribute("data-muscle");
+        updateSelectedMuscleGroup(selectedMuscle);
+    });
+});
+
+difficultyItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+        var selectedDifficulty = item.getAttribute("data-difficulty");
+        updateSelectedDifficultyLevel(selectedDifficulty);
+    });
+});
 
 // function to show modal
 function showModal() {
     errorModal.style.display = "block";
 }
 
-// Function to hide modal
+// function to hide modal
 function hideModal() {
     errorModal.style.display = "none";
 }
-
 
 //Account creation page functions
 //Store User input as an object inside userArr and local storage
