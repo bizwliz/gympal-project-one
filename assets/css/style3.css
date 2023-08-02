@@ -14,12 +14,12 @@
 .active-slide{
     display: block;
 }
-  
+
+
 .prev,
 .next {
     cursor: pointer;
-    position: absolute;
-    top: 50%;
+    margin: auto;
     transform: translateY(-50%);
     width: auto;
     padding: 16px;
@@ -29,13 +29,6 @@
     border-radius: 5px;
   }
   
-.prev {
-    left:150px;  
-}
-  
-.next {
-    right: 150px;  
-}
   
 .prev:hover,
 .next:hover{
@@ -57,4 +50,8 @@
     margin: 5px 0;
     border: 0;
     border-top: 1px solid #ccc;
+}
+
+#your-workout{
+    display: flex;
 }
