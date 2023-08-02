@@ -1,34 +1,70 @@
-h1{
+
+
+
+h1 {
     display: flex;
     flex-wrap: wrap;
-    background: green;
+   font-size: x-large;
     justify-content: center;
+    box-sizing: border-box;
+    background-image: url(https://placehold.co/1380x900);
+
 }
 
-h2{
+h2 {
+    background-image: url(https://placehold.co/1080x400);
+    position: absolute;
+    z-index: 1;
+    bottom: 10%;
+    border: 3px black solid;
+    background-color: aliceblue;
     padding: 10px;
-    margin-left: 10px;
+}
+
+.h4-br {
+    position: absolute;
+    z-index: 1;
+    bottom: 10%;
+    border: 3px black solid;
+    background-color: aliceblue;
+    padding: 10px;
 }
 
 h3{
     padding: 10px;
     margin-left: 10px;
+
 }
 
 h4{
-    padding: 10px;
-    margin-left: 10px;
+    position: absolute;
+    background-size: cover;
+    z-index: 1;
+    bottom: 10%;
+    border: 3px black solid;
+    background-color: aliceblue;
+    padding: 10px; 
+    
 }
-
 body{
+  background-color: white;
+ 
+}
+}
+
+ .button {
     background-color: white;
-}
-
-button{
-    background-color: aquamarine;
     margin-left: 10px;
+    padding: 10px;
+    position: relative;
+    height: fit-content;
 }
+   
 
+
+.text{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 100px;
 }
-    background-color: gray;
-} 
