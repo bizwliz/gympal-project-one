@@ -1,16 +1,26 @@
+var healthchoice = "dairy-free"
+var recipeApiKey = "7b96ce73245fd63d266ec31879968a08"
+var recipes = `https://api.edamam.com/api/recipes/v2?type=public&health=${healthchoice}&app_id=cfd01724&app_key=7b96ce73245fd63d266ec31879968a08%20%09`
+var APIKey = "el9fiYScbudO77M6OCsIXA==qu4fJ4psSnQw7h6M";
+var urlMuscles = "https://api.api-ninjas.com/v1/exercises?muscle="
+var selectedMuscleGroup = "Muscle Group";
+var selectedDifficultyLevel = "Difficulty Level";
 var modalCloseBtn = document.querySelector(".modal-close");
 var signUpBtn = document.getElementById("sign-up-btn");
 var errorModal = document.getElementById("error-modal");
+// add event listeners to each dropdown menu item
+var muscleGroupItems = document.querySelectorAll("#dropdown-menu-muscle .dropdown-item");
+var difficultyItems = document.querySelectorAll("#dropdown-menu-difficulty .dropdown-item");
+var yourRecipeEl = document.getElementById("your-recipe");
+var ingredientListEl = document.getElementById("ingredient-list");
+var recipeLinkEl = document.getElementById("recipe-link");
+var recipeImgEl = document.getElementById("recipe-image");
 var userArr = [];
 
 //TESTING EDAMAM RECIPE API
-var healthchoice = "dairy-free"
-var apiKey = "7b96ce73245fd63d266ec31879968a08"
-var recipes = `https://api.edamam.com/api/recipes/v2?type=public&health=${healthchoice}&app_id=cfd01724&app_key=7b96ce73245fd63d266ec31879968a08%20%09`
-
 fetch(recipes, {
     headers: {
-        'X-Api-Key': apiKey,
+        'X-Api-Key': recipeApiKey,
     }
 })
 
@@ -21,20 +31,65 @@ fetch(recipes, {
         console.log(data);
     })
 
+//FETCHING RECIPE FOR USER
+function setHealthChoice() {
+    test = JSON.parse(localStorage.getItem('userObj'));
+    var index = test.length - 1;
+    healthchoice = test[index].diet;
+}
+
+var ingredients = [];
+var recipeName = "";
+var recipeUrl = "";
+var recipeImgSrc = "";
+
+function getRecipe() {
+    setHealthChoice();
+
+    fetch(recipes, {
+        headers: {
+            'X-Api-Key': recipeApiKey,
+        }
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            var dataLength = data.hits.length;
+            var rand = Math.floor(Math.random() * dataLength);
+            var numIng = data.hits[rand].recipe.ingredients.length;
+            recipeUrl = data.hits[rand].recipe.url;
+            recipeName = data.hits[rand].recipe.label;
+            recipeImgSrc = data.hits[rand].recipe.image;
+            for (let i = 0; i < numIng; i++) {
+                ingredients.push(data.hits[rand].recipe.ingredients[i].text);
+            }
+            console.log(ingredients);
+            console.log(recipeUrl);
+            console.log(recipeName);
+            console.log(recipeImgSrc);
+        })
+
+}
+
+function displayRecipe() {
+    getRecipe();
+    yourRecipeEl.innerHTML = recipeName;
+    recipeImgEl.src = recipeImgSrc;
+    recipeLinkEl.innerHTML = "Link:" + recipeUrl;
+    for (let i = 0; i < ingredients.length; i++) {
+        var li = document.createElement("li");
+        li.innerHTML = ingredients[i];
+        ingredientListEl.appendChild(li);
+    }
+}
 
 // TESTING API NINJAS EXERCISE API
-var APIKey = "el9fiYScbudO77M6OCsIXA==qu4fJ4psSnQw7h6M";
-var urlMuscles = "https://api.api-ninjas.com/v1/exercises?muscle="
-
-var selectedMuscleGroup = "Muscle Group";
-var selectedDifficultyLevel = "Difficulty Level";
-
 // fetching api data function based on user selection
 function fetchMuscleGroupInformation() {
     var muscleGroup = selectedMuscleGroup.toLowerCase();
     var difficultyLevel = selectedDifficultyLevel.toLowerCase();
 
-    var APIKey = "el9fiYScbudO77M6OCsIXA==qu4fJ4psSnQw7h6M";
     var urlMuscles = "https://api.api-ninjas.com/v1/exercises?muscle=" + muscleGroup + "&difficulty=" + difficultyLevel;
 
     fetch(urlMuscles, {
@@ -42,14 +97,14 @@ function fetchMuscleGroupInformation() {
             'X-Api-Key': APIKey,
         }
     })
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log(data);
-        // save the API data into local storage
-        localStorage.setItem("exercise", JSON.stringify(data));
-    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            // save the API data into local storage
+            localStorage.setItem("exercise", JSON.stringify(data));
+        })
 }
 
 // function to update the selected muscle group
@@ -66,9 +121,6 @@ function updateSelectedDifficultyLevel(difficultyLevel) {
     fetchMuscleGroupInformation();
 }
 
-// add event listeners to each dropdown menu item
-var muscleGroupItems = document.querySelectorAll("#dropdown-menu-muscle .dropdown-item");
-var difficultyItems = document.querySelectorAll("#dropdown-menu-difficulty .dropdown-item");
 
 muscleGroupItems.forEach(function (item) {
     item.addEventListener("click", function () {
@@ -155,50 +207,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// function displayExerciseInfo() {
-//     // Retrieve workout data from local storage
-//     var workoutData = JSON.parse(localStorage.getItem("exercise"));
-
-//     if (!workoutData || workoutData.length === 0) {
-//         console.error("Workout data not available or empty.");
-//         return;
-//     }
-
-//     // Get the container element where you want to display the exercise information
-//     var exerciseContainer = document.getElementById("exercise-info-container");
-
-//     // Create a heading to indicate the user selection
-//     var heading = document.createElement("h2");
-//     heading.textContent = "Your Selected Exercise Information";
-//     exerciseContainer.appendChild(heading);
-
-//     // Loop through the exercise data and create DOM elements to display the information
-//     workoutData.forEach(function (exercise) {
-//         var exerciseDiv = document.createElement("div");
-//         exerciseDiv.classList.add("exercise");
-
-//         // Populate the exercise information
-//         exerciseDiv.innerHTML = `
-//             <h3>${exercise.name}</h3>
-//             <p>Difficulty: ${exercise.difficulty}</p>
-//             <p>Equipment: ${exercise.equipment}</p>
-//             <p>Muscle: ${exercise.muscle}</p>
-//             <p>Type: ${exercise.type}</p>
-//             <p>Instructions: ${exercise.instructions}</p>
-//         `;
-
-//         exerciseContainer.appendChild(exerciseDiv);
-//     });
-// }
-
-// Event listener to wait for the DOM to be ready
-document.addEventListener("DOMContentLoaded", function () {
-    // Call the function to display exercise information
-    displayExerciseInfo();
-});
-
-
-
 // function to show modal
 function showModal() {
     errorModal.style.display = "block";
@@ -256,4 +264,6 @@ function getStorage() {
 getStorage();
 signUpBtn.addEventListener('click', storeUserInfo);
 modalCloseBtn.addEventListener("click", hideModal);
-
+document.addEventListener("DOMContentLoaded", function() {
+    displayRecipe();
+  });
