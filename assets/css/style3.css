@@ -1,0 +1,60 @@
+.slideshow-container{
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 900px;  
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;  
+}
+  
+.exercise-slide{
+    display: none;
+}
+
+.active-slide{
+    display: block;
+}
+  
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: #fff;
+    background-color: #32402F;
+    border: none;
+    border-radius: 5px;
+  }
+  
+.prev {
+    left:150px;  
+}
+  
+.next {
+    right: 150px;  
+}
+  
+.prev:hover,
+.next:hover{
+    background-color: #0056b3;
+}
+  
+.workout-box{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+  
+.topic{
+    font-weight: bold;
+    margin-top: 10px;
+}
+  
+.line{
+    margin: 5px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
