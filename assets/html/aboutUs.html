@@ -5,40 +5,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Your Info</title>
+
+  <!-- CSS FRAMEWORK -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <!-- FONT DOCS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&family=Red+Hat+Display&display=swap"
+    rel="stylesheet">
+
   <!-- added styling sheet i created for modal -->
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/style2.css">
-
-
 
 </head>
 
 
 <header>
-    <!-- NAVIGATION BAR -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="index.html">
-          <!-- gympal logo
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <!-- gympal logo
           <img src="" width="112" height="28"> -->
-          <h1>GYM PAL</h1>
+        <h1>GYM PAL</h1>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <a class="navbar-item">
+          About Us
+        </a>
+        <a class="navbar-item">
+          New Plan
         </a>
       </div>
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-        </div>
-      </div>
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <a class="navbar-item">
-            About Us
-          </a>
-          <a class="navbar-item">
-            New Plan
-          </a>
-        </div>
-      </div>
-    </nav>
+    </div>
+  </nav>
 </header>
 
 <body>
@@ -72,7 +80,7 @@
   <!-- CHECKBOX LIST -->
   <section id="dietary-needs-list">
 
-    <!-- TRY TO DO THIS IN JAVASCRIPT AFTER -->
+
     <label class="checkbox">
       <input id="diet1" type="checkbox" value="shellfish-free">
       Shellfish-free
@@ -181,23 +189,23 @@
     </div>
   </div>
 
-        <!-- button -->
-        <button id="sign-up-btn" class="button is-rounded">Next</button>
+  <!-- button -->
+  <button id="sign-up-btn" class="button is-rounded">Next</button>
 
-<!-- Add the modal HTML -->
-<div class="modal" id="error-modal" style="display: none;">
+  <!-- Add the modal HTML -->
+  <div class="modal" id="error-modal" style="display: none;">
     <div class="modal-content">
-        <div class="modal-text">
-            <p>Please fill in all the fields.</p>
-        </div>
-        <div class="modal-close-container"> 
-            <button class="modal-close is-large" aria-label="close">Close</button>
-        </div>
+      <div class="modal-text">
+        <p>Please fill in all the fields.</p>
+      </div>
+      <div class="modal-close-container">
+        <button class="modal-close is-large" aria-label="close">Close</button>
+      </div>
     </div>
-</div>
+  </div>
 
 
-        <script src="../js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 
 </html>

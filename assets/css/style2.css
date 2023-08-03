@@ -1,4 +1,23 @@
 /* added styling sheet for modal */
+:root{
+    --text-color:#FAF2E9;
+    --background-color: #32402F;
+
+}
+
+
+html{
+    background-color: var(--background-color);
+}
+
+body {
+background-color: var(--background-color);
+color: var(--text-color);
+padding-bottom: 20px;
+
+}
+
+
 .modal {
     display: flex;
     align-items: center;
