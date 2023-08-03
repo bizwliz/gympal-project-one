@@ -15,74 +15,59 @@ var yourRecipeEl = document.getElementById("your-recipe");
 var ingredientListEl = document.getElementById("ingredient-list");
 var recipeLinkEl = document.getElementById("recipe-link");
 var recipeImgEl = document.getElementById("recipe-image");
-var userArr = [];
-
-//TESTING EDAMAM RECIPE API
-fetch(recipes, {
-    headers: {
-        'X-Api-Key': recipeApiKey,
-    }
-})
-
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log(data);
-    })
-
-//FETCHING RECIPE FOR USER
-function setHealthChoice() {
-    test = JSON.parse(localStorage.getItem('userObj'));
-    var index = test.length - 1;
-    healthchoice = test[index].diet;
-}
-
 var ingredients = [];
 var recipeName = "";
 var recipeUrl = "";
 var recipeImgSrc = "";
+var userArr = [];
 
-function getRecipe() {
-    setHealthChoice();
-
-    fetch(recipes, {
-        headers: {
-            'X-Api-Key': recipeApiKey,
-        }
-    })
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            var dataLength = data.hits.length;
-            var rand = Math.floor(Math.random() * dataLength);
-            var numIng = data.hits[rand].recipe.ingredients.length;
-            recipeUrl = data.hits[rand].recipe.url;
-            recipeName = data.hits[rand].recipe.label;
-            recipeImgSrc = data.hits[rand].recipe.image;
-            for (let i = 0; i < numIng; i++) {
-                ingredients.push(data.hits[rand].recipe.ingredients[i].text);
-            }
-            console.log(ingredients);
-            console.log(recipeUrl);
-            console.log(recipeName);
-            console.log(recipeImgSrc);
-        })
-
+//FETCHING RECIPE FOR USER
+//sets healthchoice to pass into recipe API
+function setHealthChoice() {
+    var test = JSON.parse(localStorage.getItem('userObj'));
+    var index = test.length - 1;
+    healthchoice = test[index].diet;
 }
 
+//retrieves recipe data from API
+function getRecipe() {
+    fetch(recipes, {
+      headers: {
+        'X-Api-Key': recipeApiKey,
+      }
+    })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var dataLength = data.hits.length;
+      var rand = Math.floor(Math.random() * dataLength);
+      var numIng = data.hits[rand].recipe.ingredients.length;
+      recipeUrl = data.hits[rand].recipe.url;
+      recipeName = data.hits[rand].recipe.label;
+      recipeImgSrc = data.hits[rand].recipe.image;
+      for (let i = 0; i < numIng; i++) {
+        ingredients.push(data.hits[rand].recipe.ingredients[i].text);
+}
+      console.log(ingredients);
+      console.log(recipeUrl);
+      console.log(recipeName);
+      console.log(recipeImgSrc);
+      displayRecipe();
+});
+}
 function displayRecipe() {
-    getRecipe();
     yourRecipeEl.innerHTML = recipeName;
     recipeImgEl.src = recipeImgSrc;
-    recipeLinkEl.innerHTML = "Link:" + recipeUrl;
+    recipeLinkEl.innerHTML = "Link: " + recipeUrl;
     for (let i = 0; i < ingredients.length; i++) {
-        var li = document.createElement("li");
-        li.innerHTML = ingredients[i];
-        ingredientListEl.appendChild(li);
+      var li = document.createElement("li");
+      li.innerHTML = ingredients[i];
+      ingredientListEl.appendChild(li);
     }
 }
+    getRecipe();
+
 
 // TESTING API NINJAS EXERCISE API
 // fetching api data function based on user selection
@@ -246,6 +231,7 @@ function storeUserInfo() {
 
         // Navigate to the next page (page 3) when all fields are filled
         window.location.href = "./page5.html";
+        getRecipe();
     }
     else {
         showModal(); // Show the modal if fields are not filled
@@ -263,6 +249,3 @@ function getStorage() {
 getStorage();
 signUpBtn.addEventListener('click', storeUserInfo);
 modalCloseBtn.addEventListener("click", hideModal);
-document.addEventListener("DOMContentLoaded", function() {
-    displayRecipe();
-  });
