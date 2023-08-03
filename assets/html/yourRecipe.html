@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Workout</title>
+  <title>Your Recipe</title>
 
   <!-- CSS FRAMEWORK -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -23,7 +23,6 @@
 
 <body class="display">
 
-  <!-- NAVIGATION BAR -->
   <header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
@@ -50,37 +49,40 @@
       </div>
     </nav>
   </header>
- 
-  <div>
-    <ul id="your-workout">Your Workout
-      <!-- Add a container for the slideshow -->
-      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-      <div class="slideshow-container">
-        <!-- Exercise information will be displayed here -->
+  
+<div class="columns">
+  <div class="column">
+    <div class="your-workout-box">
+        <h2 id="your-workout-title">Your Workout</h2>
+    </div>
+    <div>
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <div class="slideshow-container">
+        </div>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        <li class="exercise"></li>
+    </div>
+  </div>
+
+  <div class="column">
+      <div class="your-recipe-box">
+          <h2 id="your-recipe-title">Your Recipe</h2>
       </div>
-
-      <!-- Next and Previous arrows -->
-
-      <a class="next" onclick="changeSlide(1)">&#10095;</a>
-      <li class="exercise"></li>
-    </ul>
+      <div id="recipe-container">
+          <div class="recipe-info">
+              <img id="recipe-image" src="" alt="Food" width="400px" height="300px">
+              <div class="recipe-details">
+                  <h3 id="recipe-name"></h3>
+                  <h4>Ingredients:</h4>
+                  <ul id="ingredient-list"></ul>
+                  <p id="recipe-link">Link:</p>
+              </div>
+          </div>
+      </div>
   </div>
+</div>
 
-
-  <div>
-    <h1 id="your-recipe">Your Recipe</h1>
-    <img id="recipe-image" src="" alt="Food" width="400px" height="600px">
-    <h3>Ingredients:</h3>
-    <ul id="ingredient-list">
-      <!-- The list items for the ingredients will be added here dynamically -->
-    </ul>
-    <h3>Instructions:</h3>
-    <p id="recipe-link">Link:</p>
-  </div>
-
-
-
-  <script src="../js/script.js"></script>
+<script src="../js/script.js"></script>
 </body>
 
 </html>
