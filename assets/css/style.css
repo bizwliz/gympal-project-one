@@ -1,7 +1,6 @@
 :root{
     --text-color:#FAF2E9;
     --background-color: #32402F;
-
 }
 
 .title{
@@ -50,13 +49,6 @@ button{
     color: white;
 }
 
-/* .description {
-    color:var(--text-color);
-    background-color: var(--background-color);
-    height: 700px;
-    text-align: center;
-    padding: 200px 0;
-} */
 .description {
     color: var(--text-color);
     background-color: var(--background-color);
@@ -70,9 +62,3 @@ button{
 .description a{
     width:20px;
 }
-#get-started {
-
-}
-/* }
-    background-color: gray;
-}  */
