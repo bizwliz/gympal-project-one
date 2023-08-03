@@ -5,22 +5,26 @@
   --paragraph-text: "Red Hat Display", sans-serif;
 }
 
+html {
+  background-color: var(--background-color);
+}
+
+
 h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   font-family: var(--title-text);
 }
-#who {
-  position: relative;
-  left: 270px;
-}
+
 
 h2,
 h3,
 h4 {
+  
   padding: 10px;
   margin-left: 10px;
+  font-family: var(--paragraph-text) ;
 }
 
 p {
@@ -32,25 +36,26 @@ a {
 }
 
 body {
-  background-color: white;
+  background-color: var(--background-color);
 }
 
-button {
-  background-color: aquamarine;
-  margin: 10px;
-  padding: 10px;
+
+#who {
+  position: relative;
+  left: 270px;
 }
 
-.columns {
+.title {
+  font-size: 40px;
+}
+
+.columns,.is-two-thirds {
   height: 700px;
   width: 100%;
 }
 
-.is-two-thirds {
-  width: 100%;
-}
 .introduction {
-  color: white;
+  color: var(--text-color);
 }
 
 .description {
@@ -67,6 +72,25 @@ button {
   width: 20px;
 }
 
+
+.field{
+  width: 500px;
+}
+
+/* RANDOM PIECES */
+.buddy {
+  position: relative;
+  left: 110px;
+}
+
+.combine {
+  text-align: center;
+}
+ #gym-pal {
+  font-size: 70px;
+  color: var(--text-color);
+ }
+
 /* IMAGES */
 #gym-guy {
   float: left;
@@ -74,4 +98,20 @@ button {
   width: 500px;
   padding: 20px;
   margin: 20px;
+}
+
+#food-platter {
+  float: right;
+  height: 300px;
+  width: 700px;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+}
+
+.barbell-logo {
+  height:60px ;
+  width: 60px;
+  position: relative;
+  top: 4px;
 }
