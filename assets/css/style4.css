@@ -1,3 +1,10 @@
+:root{
+    --text-color:#FAF2E9;
+    --background-color: #32402F;
+
+}
+
+
 .background-container {
     background-image: url('../images/gym_photo2.png');
     background-size: cover;
@@ -11,6 +18,10 @@
     position: relative;  
 }
   
+.slideshow-container {
+    color: black;
+}
+
 .content-wrapper {
     display: flex;
     flex-direction: row;
