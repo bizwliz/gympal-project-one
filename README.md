@@ -50,7 +50,7 @@ Welcome to "GYMPAL," your ultimate fitness and nutrition companion designed to s
 <div>THEN I am presented with a summary of why the app was made and the creators of the app</div>
 
 
-## Installation 
+## Installation & Usage
 <ol>
     <li>Create Repository on Github</li>
     <li>Create and assign branches to Project Members</li>
@@ -64,10 +64,12 @@ Welcome to "GYMPAL," your ultimate fitness and nutrition companion designed to s
     <li>Submit Project on Bootcamp</li>
 </ol>
 
+<img src="./assets/images/screenshot.png">
+<img src="./assets/images/screenshot2.png">
+
 ## Deployed Link & Resources
 
-Link to website: 
-<!-- link here -->
+Link to website: <a href="https://bizwliz.github.io/gympal-project-one/">GYMPAL</a>
 
 <table border="1">
  <tr>
