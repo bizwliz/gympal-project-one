@@ -64,7 +64,7 @@ function displayRecipe() {
     // Set the recipe details in the elements
     recipeNameEl.textContent = recipeName;
     recipeImgEl.src = recipeImgSrc;
-    recipeLinkEl.innerHTML = "<a href='" + recipeUrl + "'>Link</a>";
+    recipeLinkEl.innerHTML = "<a target='_blank' href='" + recipeUrl + "'>Recipe Link</a>";
 
     // Clear previous ingredients and add new ones
     ingredientListEl.innerHTML = "";
@@ -228,7 +228,7 @@ function storeUserInfo() {
         localStorage.setItem("userObj", JSON.stringify(userArr));
 
         // Navigate to the next page (page 3) when all fields are filled
-        window.location.href = "./page5.html";
+        window.location.href = "./yourRecipe.html";
         getRecipe();
     }
     else {

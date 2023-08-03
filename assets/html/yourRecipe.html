@@ -26,9 +26,8 @@
   <header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="index.html">
-          <!-- gympal logo
-          <img src="" width="112" height="28"> -->
+        <a class="navbar-item" href="./homepage.html">
+
           <h1 class="title" >GYM PAL</h1>
         </a>
         <img class="barbell-logo" src="../images/barbell copy.png" alt="gym-pal-logo">
@@ -39,10 +38,11 @@
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
-          <a class="navbar-item">
+          
+          <a href="homepage.html" class="navbar-item">
             About Us
           </a>
-          <a class="navbar-item">
+          <a href="yourInfo.html" class="navbar-item">
             New Plan
           </a>
         </div>
@@ -53,14 +53,14 @@
 <div class="columns">
   <div class="column">
     <div class="your-workout-box">
-        <h2 id="your-workout-title">Your Workout</h2>
+      <h2 id="your-workout-title">Your Workout</h2>
     </div>
+    <br>
     <div>
-        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-        <div class="slideshow-container">
-        </div>
-        <a class="next" onclick="changeSlide(1)">&#10095;</a>
-        <li class="exercise"></li>
+      <div class="slideshow-container">
+      </div>
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
     </div>
   </div>
 
@@ -75,7 +75,9 @@
                   <h3 id="recipe-name"></h3>
                   <h4>Ingredients:</h4>
                   <ul id="ingredient-list"></ul>
-                  <p id="recipe-link">Link:</p>
+
+                 <a><button id="recipe-link" class="button is-rounded">Recipe Link</button></a>
+
               </div>
           </div>
       </div>

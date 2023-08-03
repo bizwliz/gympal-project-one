@@ -115,3 +115,10 @@ body {
   position: relative;
   top: 4px;
 }
+
+#combining {
+  text-align: center;
+  position: relative;
+top: 200px;
+font-size: larger;
+}

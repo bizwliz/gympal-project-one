@@ -33,6 +33,9 @@ padding-bottom: 20px;
 
 .modal-text {
     margin-bottom: 10px;
+    color: #32402F;
+    font-size: 30px;
+   text-align: center;
 }
 
 /* .modal-close-container {
