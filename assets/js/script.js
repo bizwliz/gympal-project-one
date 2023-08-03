@@ -54,17 +54,30 @@ function getRecipe() {
 });
 }
 function displayRecipe() {
-    yourRecipeEl.innerHTML = recipeName;
+    // Retrieve the container and recipe details elements
+    var recipeContainer = document.getElementById("recipe-container");
+    var recipeNameEl = document.getElementById("recipe-name");
+    var ingredientListEl = document.getElementById("ingredient-list");
+    var recipeLinkEl = document.getElementById("recipe-link");
+    var recipeImgEl = document.getElementById("recipe-image");
+
+    // Set the recipe details in the elements
+    recipeNameEl.textContent = recipeName;
     recipeImgEl.src = recipeImgSrc;
-    recipeLinkEl.innerHTML = "Link: " + recipeUrl;
+    recipeLinkEl.innerHTML = "<a href='" + recipeUrl + "'>Link</a>";
+
+    // Clear previous ingredients and add new ones
+    ingredientListEl.innerHTML = "";
     for (let i = 0; i < ingredients.length; i++) {
-      var li = document.createElement("li");
-      li.innerHTML = ingredients[i];
-      ingredientListEl.appendChild(li);
+        var li = document.createElement("li");
+        li.textContent = ingredients[i];
+        ingredientListEl.appendChild(li);
     }
+
+    // Display the recipe container
+    recipeContainer.style.display = "block";
 }
     getRecipe();
-
 
 // TESTING API NINJAS EXERCISE API
 function fetchMuscleGroupInformation() {
