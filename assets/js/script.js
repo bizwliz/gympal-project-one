@@ -8,7 +8,6 @@ var selectedDifficultyLevel = "Difficulty Level";
 var modalCloseBtn = document.querySelector(".modal-close");
 var signUpBtn = document.getElementById("sign-up-btn");
 var errorModal = document.getElementById("error-modal");
-// add event listeners to each dropdown menu item
 var muscleGroupItems = document.querySelectorAll("#dropdown-menu-muscle .dropdown-item");
 var difficultyItems = document.querySelectorAll("#dropdown-menu-difficulty .dropdown-item");
 var yourRecipeEl = document.getElementById("your-recipe");
@@ -22,14 +21,12 @@ var recipeImgSrc = "";
 var userArr = [];
 
 //FETCHING RECIPE FOR USER
-//sets healthchoice to pass into recipe API
 function setHealthChoice() {
     var test = JSON.parse(localStorage.getItem('userObj'));
     var index = test.length - 1;
     healthchoice = test[index].diet;
 }
 
-//retrieves recipe data from API
 function getRecipe() {
     fetch(recipes, {
       headers: {
@@ -57,20 +54,32 @@ function getRecipe() {
 });
 }
 function displayRecipe() {
-    yourRecipeEl.innerHTML = recipeName;
+    // Retrieve the container and recipe details elements
+    var recipeContainer = document.getElementById("recipe-container");
+    var recipeNameEl = document.getElementById("recipe-name");
+    var ingredientListEl = document.getElementById("ingredient-list");
+    var recipeLinkEl = document.getElementById("recipe-link");
+    var recipeImgEl = document.getElementById("recipe-image");
+
+    // Set the recipe details in the elements
+    recipeNameEl.textContent = recipeName;
     recipeImgEl.src = recipeImgSrc;
-    recipeLinkEl.innerHTML = "Link: " + recipeUrl;
+    recipeLinkEl.innerHTML = "<a href='" + recipeUrl + "'>Link</a>";
+
+    // Clear previous ingredients and add new ones
+    ingredientListEl.innerHTML = "";
     for (let i = 0; i < ingredients.length; i++) {
-      var li = document.createElement("li");
-      li.innerHTML = ingredients[i];
-      ingredientListEl.appendChild(li);
+        var li = document.createElement("li");
+        li.textContent = ingredients[i];
+        ingredientListEl.appendChild(li);
     }
+
+    // Display the recipe container
+    recipeContainer.style.display = "block";
 }
     getRecipe();
 
-
 // TESTING API NINJAS EXERCISE API
-// fetching api data function based on user selection
 function fetchMuscleGroupInformation() {
     var muscleGroup = selectedMuscleGroup.toLowerCase();
     var difficultyLevel = selectedDifficultyLevel.toLowerCase();
@@ -87,7 +96,6 @@ function fetchMuscleGroupInformation() {
         })
         .then(function (data) {
             console.log(data);
-            // save the API data into local storage
             localStorage.setItem("exercise", JSON.stringify(data));
         })
 }
@@ -130,16 +138,12 @@ function displayExerciseInfo() {
         return;
     }
 
-    // Get the container element for the slideshow
     var slideshowContainer = document.querySelector(".slideshow-container");
 
-    // Loop through the exercise data and create a slide for each workout
     workoutData.forEach(function (exercise, index) {
-        // Create a slide for the workout information
         var slide = document.createElement("div");
         slide.classList.add("exercise-slide");
 
-        // Populate the exercise information
         slide.innerHTML = `
             <h3>${exercise.name}</h3>
             <p>Difficulty: ${exercise.difficulty}</p>
@@ -152,7 +156,6 @@ function displayExerciseInfo() {
         slideshowContainer.appendChild(slide);
     });
 
-    // Display the first slide by default
     showSlide(0);
 }
 
@@ -167,7 +170,6 @@ function showSlide(index) {
     var slides = document.getElementsByClassName("exercise-slide");
     var totalSlides = slides.length;
 
-    // Ensure the index wraps around when reaching the end or beginning
     if (index >= totalSlides) {
         slideIndex = 0;
     } else if (index < 0) {
@@ -176,18 +178,15 @@ function showSlide(index) {
         slideIndex = index;
     }
 
-    // Hide all slides
     for (var i = 0; i < totalSlides; i++) {
         slides[i].style.display = "none";
     }
 
-    // Display the current slide
     slides[slideIndex].style.display = "block";
 }
 
 // Event listener to wait for the DOM to be ready
 document.addEventListener("DOMContentLoaded", function () {
-    // Call the function to display exercise information
     displayExerciseInfo();
 });
 
@@ -202,7 +201,6 @@ function hideModal() {
 }
 
 //Account creation page functions
-//Store User input as an object inside userArr and local storage
 function storeUserInfo() {
     var signUpName = document.getElementById("sign-up-name").value;
     var signUpEmail = document.getElementById("sign-up-email").value;
