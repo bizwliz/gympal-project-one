@@ -45,12 +45,9 @@ Welcome to "GYMPAL," your ultimate fitness and nutrition companion designed to s
 <div>WHEN I see my workout & recipe information</br>
 <div>THEN I can scroll through the workouts & recipes (includes photos) provided.</br>
 ---
-<div>My Past Routines Page:</div>
-<div>WHEN I view my past routines page</div>
-<div>THEN I am presented with a list of the last 3 saved routines</div>
-<div>WHEN I click on a button (there will be 3) </div>
-<div>THEN I am presented with my custom plan page from the 3 most recent routines</div>
-
+<div>About Us Page:</div>
+<div>WHEN I view the About us Page/div>
+<div>THEN I am presented with a summary of why the app was made and the creators of the app</div>
 
 
 ## Installation 
